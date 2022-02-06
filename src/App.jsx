@@ -125,7 +125,7 @@ const App = ({ isServerInfo }) => {
         <Text style={{ display: "block" }}>
           ⭐️ Find the Codebase here{" "}
           <a
-            href="https://github.com/ethereum-boilerplate/ethereum-boilerplate/"
+            href="https://github.com/NisaarAgharia/Death-Wallet"
             target="_blank"
             rel="noopener noreferrer"
           >

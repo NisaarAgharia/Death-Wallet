@@ -23,6 +23,10 @@ function MenuItems() {
         <NavLink to="/contract">
           Secure Cypto Assests</NavLink>
       </Menu.Item>
+      <Menu.Item key="/wallet">
+        <NavLink to="/wallet">
+          Transfer to Nominee</NavLink>
+      </Menu.Item>
     </Menu>
   );
 }

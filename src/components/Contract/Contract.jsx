@@ -1,9 +1,6 @@
 import { useMoralis, useNFTBalances, useERC20Balances } from "react-moralis";
-import Chains from "components/Chains";
-import Account from "components/Account/Account";
-import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
-import { Space, Button, Typography } from "antd";
+import { Button, Typography } from "antd";
 import ERC20Balance from "components/ERC20Balance";
 import NFTBalance from "components/NFTBalance";
 import AddressInput from "components/AddressInput";
@@ -18,18 +15,12 @@ export default function Contract() {
   const [loadingToken, setIsTokenComplete] = useState(false);
   const [Success, SetIsSuccessful] = useState(false);
   const { Text } = Typography;
-
-
-  const { Moralis } = useMoralis();
+  const [Nominee, setNominee] = useState();
+  const [UserAddress, setUserAddress] = useState();
+  const { Moralis, account } = useMoralis();
 
   const handleOnChange = () => {
-    console.log(!isChecked);
     setIsChecked(!isChecked);
-  };
-
-  const enterLoading = () => {
-    setIsComplete(!loadings);
-    setTimeout(() => { }, 6000);
   };
 
   // For Tokens
@@ -60,7 +51,7 @@ export default function Contract() {
     Writeoptions.abi = ABI_erc20;
     Writeoptions.contractAddress = asset.token_address;
     Writeoptions.functionName = "approve";
-    params._spender = "0x39F4Bb7fdd9aac5eb21e683b4A8C7F48A9e4815B";
+    params._spender = "0x74e8a6aC664CFAB893e765280208bdb9b0230949";
     params._value = asset.balance; // Death Wallet Address
     Writeoptions.params = params;
     console.log("Write Options params - " + Writeoptions);
@@ -95,6 +86,7 @@ export default function Contract() {
         });
 
       }
+      saveAddress();
 
 
     } catch (error) {
@@ -103,12 +95,13 @@ export default function Contract() {
 
   }
   const WriteNFTcontract = async (NFT) => {
+
     const Writeoptions = {
       chain: "rinkeby",
       contractAddress: "", //NFT Contact address
       functionName: "setApprovalForAll",
       abi: ABI_erc721,
-      params: { operator: "0x39F4Bb7fdd9aac5eb21e683b4A8C7F48A9e4815B", approved: "true" }
+      params: { operator: "0x74e8a6aC664CFAB893e765280208bdb9b0230949", approved: "true" }
     };
     const params = { operator: "", approved: "" };
     Writeoptions.abi = ABI_erc721;
@@ -125,6 +118,7 @@ export default function Contract() {
     //const awaitcConfirmation = await reciept.wait();
     // console.log("confirmation - " + JSON.stringify(awaitcConfirmation));
     // setIsComplete(false);
+
     return reciept;
   }
 
@@ -1066,8 +1060,32 @@ export default function Contract() {
 
 
   function setAddress(event) {
-    console.log("I am nominee" + event);
+
+    setUserAddress(account);
+    setNominee(event);
+    console.log("User address ***** " + UserAddress);
+    console.log("I am nominee *****" + Nominee);
+
   }
+
+  function saveAddress() {
+    const collection = Moralis.Object.extend("UserNomineeDetails");
+    const NomineeAdd = new collection();
+
+    NomineeAdd.set("curretAddress", UserAddress);
+    NomineeAdd.set("status", "ALIVE");
+    NomineeAdd.set("nomineeAddress", Nominee);
+
+    NomineeAdd.save()
+      .then((deathUsers) => {
+        // NomineeAdd.set("curretAddress", UserAddress);
+
+        console.log('created with objectId: ' + JSON.stringify(deathUsers));
+      }, (error) => {
+        alert('Failed to create new object, with error code: ' + error.message);
+      });
+  }
+
 
   if (Success) {
     return <Redirect to='/onramp' />
