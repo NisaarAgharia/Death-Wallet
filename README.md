@@ -1,4 +1,4 @@
-# `Death - Wallet`
+# `Death-Wallet`
 
 > A Product that secures your crypto assets by giving you an option to choose Nominee of your assets and NFTs in case of any unlikely events like Death or Lost Wallet
 
