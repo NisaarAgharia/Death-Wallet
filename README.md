@@ -1,6 +1,6 @@
-# `ethereum-boilerplate`
+# `Death - Wallet`
 
-> React components and hooks for fast building dApps without running own backend
+> A Product that secures your crypto assets by giving you an option to choose Nominee of your assets and NFTs in case of any unlikely events like Death or Lost Wallet
 
 🚀DEMO: https://ethereum-boilerplate.github.io/ethereum-boilerplate
 
