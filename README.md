@@ -4,6 +4,12 @@
 
 🚀DEMO: https://death-wallet.netlify.app/
 
+This project is aimed to solve the problem of Loss of Crypto assets and NFTs due to unlikely events like death and Lost Wallet.
+Users will be asked to register for Death Wallet Service, where they can add Nominee Addresses and inactivity time frame of users' addresses.
+Nominee Address:- where the Crypto assets should go in case of an unlikely event.
+Inactivity Timeframe:- Timeframe of inactivity on address selected by user eg. 1 year, 5 years, etc.
+
+In the case of Unlikely events, the user's crypto-assets can be transferred to its Nominee Addresses.
 This Application is built on [react-moralis](https://github.com/MoralisWeb3/react-moralis) and [Moralis](https://moralis.io?utm_source=github&utm_medium=readme&utm_campaign=ethereum-boilerplate). Also has its own context provider for quick access to `chainId` or `ethAddress`
 
 There are many components in this boilerplate that do not require an active web3 provider, they use Moralis Web3 API. Moralis supports the most popular blockchains and their test networks. You can find a list of all available networks in [Moralis Supported Chains](https://docs.moralis.io/moralis-server/web3-sdk/intro#supported-chains)
