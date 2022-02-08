@@ -25,13 +25,23 @@ s - don't hesitate to write in our community forum and we will check asap. [Foru
 
 
 
-# 🚀 Quick Start
+# 🚀 Application Flow - 
+During Registration Operator account is given allowance/access to the Users Tokens & NFTs.
+(By Updating ERC-20, ERC721 Smart contracts for all tokens/NFTs)
+When User gets Inactive i.e. (No Transaction for more than 1 or 5 years)
+Moralis Cloud Job Runs and Sends inactive address to Operator for settlement.
+The operator then Approves the Transaction and Send the Crypto assets to the Nominee Address
+Nominee Now has the assets of the User.
 
-# 🏗 Ethereum Components
+FrontEnd - 
+Web Application made with React, JavaScript, and Moralis Web3 SDK
+Web App lets Users register Nominee in case of Unlikely Events, User can Secure ERC-20 Tokens and ERC-721 Token
 
-🛠 The ready for use react-components are located in `src/components`. They are designed to be used anywhere in your dApp. 
-
-> ⚡ Note that many components may get params like `chain`, `address`, `size` and etc.
+Backend- 
+Smart contracts - ERC 20, ERC 721
+Backend made with Moralis Web3, Using Cloud Functions and Cloud Job for Batch processing
+The validation service will check for addresses for which the inactivity time frame has been breached.
+The Settlement service will transfer assets from the user address to the Nominee address.
 
 
 
