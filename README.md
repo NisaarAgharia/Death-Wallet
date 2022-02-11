@@ -10,11 +10,6 @@ Nominee Address:- where the Crypto assets should go in case of an unlikely event
 Inactivity Timeframe:- Timeframe of inactivity on address selected by user eg. 1 year, 5 years, etc.
 
 In the case of Unlikely events, the user's crypto-assets can be transferred to its Nominee Addresses.
-This Application is built on [react-moralis](https://github.com/MoralisWeb3/react-moralis) and [Moralis](https://moralis.io?utm_source=github&utm_medium=readme&utm_campaign=ethereum-boilerplate). Also has its own context provider for quick access to `chainId` or `ethAddress`
-
-There are many components in this boilerplate that do not require an active web3 provider, they use Moralis Web3 API. Moralis supports the most popular blockchains and their test networks. You can find a list of all available networks in [Moralis Supported Chains](https://docs.moralis.io/moralis-server/web3-sdk/intro#supported-chains)
-
-Please check the [official documentation of Moralis](https://docs.moralis.io/#user) for all the functionalities of Moralis.
 
 ![Death_Wallet_Home](https://user-images.githubusercontent.com/22457544/152706881-3cf47fe8-21c9-43a2-a239-a1e8cdc189c0.PNG)
 ![Secure_Tokens](https://user-images.githubusercontent.com/22457544/152706884-5a24c77a-eb1b-4b01-87ad-18f5ae9999ab.PNG)
@@ -48,6 +43,12 @@ Smart contracts - ERC 20, ERC 721
 Backend made with Moralis Web3, Using Cloud Functions and Cloud Job for Batch processing
 The validation service will check for addresses for which the inactivity time frame has been breached.
 The Settlement service will transfer assets from the user address to the Nominee address.
+
+This Application is built on [react-moralis](https://github.com/MoralisWeb3/react-moralis) and [Moralis](https://moralis.io?utm_source=github&utm_medium=readme&utm_campaign=ethereum-boilerplate). Also has its own context provider for quick access to `chainId` or `ethAddress`
+
+There are many components in this boilerplate that do not require an active web3 provider, they use Moralis Web3 API. Moralis supports the most popular blockchains and their test networks. You can find a list of all available networks in [Moralis Supported Chains](https://docs.moralis.io/moralis-server/web3-sdk/intro#supported-chains)
+
+Please check the [official documentation of Moralis](https://docs.moralis.io/#user) for all the functionalities of Moralis.
 
 
 
